@@ -52,9 +52,9 @@ class Dropdown extends PureComponent {
 		};
 	}
 
-	static getDerivedStateFromProps({value}) {
-		if (value !== this.props.value) {
-			this.setState({value});
+	componentDidUpdate(prevProps, prevState) {
+		if (prevProps.value !== this.props.value) {
+			this.setState({value: this.props.value});
 		}
 	}
 
@@ -408,8 +408,8 @@ class Dropdown extends PureComponent {
 		return (
 			<View style={styles.accessory}>
 				<View style={styles.triangleContainer}>
-					<View style={[styles.triangle, triangleStyle]} />{" "}
-				</View>{" "}
+					<View style={[styles.triangle, triangleStyle]} />
+				</View>
 			</View>
 		);
 	}
@@ -479,9 +479,8 @@ class Dropdown extends PureComponent {
 		return (
 			<DropdownItem index={index} {...props}>
 				<Text style={[styles.item, itemTextStyle, textStyle]} numberOfLines={1}>
-					{" "}
-					{title}{" "}
-				</Text>{" "}
+					{title}
+				</Text>
 			</DropdownItem>
 		);
 	}
@@ -577,9 +576,9 @@ class Dropdown extends PureComponent {
 			>
 				<TouchableWithoutFeedback {...touchableProps}>
 					<View pointerEvents="box-only">
-						{" "}
-						{this.renderBase(props)} {this.renderRipple()}{" "}
-					</View>{" "}
+						{this.renderBase(props)}
+						{this.renderRipple()}
+					</View>
 				</TouchableWithoutFeedback>
 				<Modal
 					visible={modal}
@@ -604,10 +603,10 @@ class Dropdown extends PureComponent {
 								keyExtractor={this.keyExtractor}
 								scrollEnabled={visibleItemCount < itemCount}
 								contentContainerStyle={styles.scrollContainer}
-							/>{" "}
-						</View>{" "}
-					</Animated.View>{" "}
-				</Modal>{" "}
+							/>
+						</View>
+					</Animated.View>
+				</Modal>
 			</View>
 		);
 	}
