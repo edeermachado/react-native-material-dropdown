@@ -4,7 +4,7 @@ import {Button} from "react-native-material-buttons";
 
 import styles from "./styles";
 
-export default class DropdownItem extends PureComponent {
+class DropdownItem extends PureComponent {
 	constructor(props) {
 		super(props);
 
@@ -46,3 +46,5 @@ DropdownItem.propTypes = {
 
 	index: PropTypes.number.isRequired,
 };
+
+export default DropdownItem;

@@ -18,7 +18,7 @@ import {TextField} from "react-native-material-textfield";
 import DropdownItem from "../item";
 import styles from "./styles";
 
-export default class Dropdown extends PureComponent {
+class Dropdown extends PureComponent {
 	constructor(props) {
 		super(props);
 
@@ -745,3 +745,5 @@ Dropdown.defaultProps = {
 
 	useNativeDriver: false,
 };
+
+export default Dropdown;
